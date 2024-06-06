@@ -29,6 +29,7 @@ message Filter {
     string gender =4;
     string nation = 5;
     int32  age = 6;
+    string election = 7;
 }
 
 message GetAllElection{
