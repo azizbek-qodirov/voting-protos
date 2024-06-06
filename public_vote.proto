@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "genprotos/";
+option go_package = "github.com/saladin2098/month3/lesson11/public_service/genprotos";
 
 package voting_proto;
 
@@ -13,7 +13,7 @@ service PublicVoteService {
     rpc DeletePublicVote(ById) returns (Void) {}
     rpc UpdatePublicVote(PublicVote) returns(Void){}
     rpc GetByIdPublicVote(ById) returns (PublicVote) {}
-    rpc GetAllPublucVotes(Void) returns (GetAllPublicVote) {}
+    rpc GetAllPublucVotes(Filter) returns (GetAllPublicVote) {}
 }
 
 message PublicVote {

@@ -1,8 +1,9 @@
 syntax = "proto3";
 
-option go_package = "genprotos/";
+option go_package = "github.com/saladin2098/month3/lesson11/public_service/genprotos";
 
 package voting_proto;
+
 import "election.proto" ;
 
 service PartyService {
@@ -10,7 +11,7 @@ service PartyService {
     rpc DeleteParty(ById) returns (Void) {}
     rpc UpdateParty(Party) returns(Void){}
     rpc GetByIdParty(ById) returns (Party) {}
-    rpc GetAllPartys(Void) returns (GetAllParty) {}
+    rpc GetAllPartys(Filter) returns (GetAllParty) {}
 }
 
 message Party {

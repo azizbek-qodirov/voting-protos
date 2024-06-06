@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "genprotos/";
+option go_package = "github.com/saladin2098/month3/lesson11/public_service/genprotos";
 
 package voting_proto;
 
@@ -13,7 +13,7 @@ service CandidateService {
     rpc DeleteCandidate(ById) returns (Void) {}
     rpc UpdateCandidate(Candidate) returns(Void){}
     rpc GetByIdCandidate(ById) returns (Candidate) {}
-    rpc GetAllCandidates(Void) returns (GetAllCandidate) {}
+    rpc GetAllCandidates(Filter) returns (GetAllCandidate) {}
 }
 
 message Candidate {
