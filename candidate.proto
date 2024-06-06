@@ -5,11 +5,9 @@ option go_package = "github.com/saladin2098/month3/lesson11/public_service/genpr
 package voting_proto;
 
 import "election.proto";
-import "party.proto";
-import "public.proto";
 
 service CandidateService {
-    rpc CreateCandidate(Candidate) returns (Void) {}
+    rpc CreateCandidate(CandidateCreate) returns (Void) {}
     rpc DeleteCandidate(ById) returns (Void) {}
     rpc UpdateCandidate(Candidate) returns(Void){}
     rpc GetByIdCandidate(ById) returns (Candidate) {}
@@ -18,10 +16,14 @@ service CandidateService {
 
 message Candidate {
     string id = 1;
-    Election election =2;
-    Party party=3;
-    Public public=4;
-    string date =5;
+    string election =2;
+    string party=3;
+    string public=4;
+}
+message CandidateCreate {
+    string ElectionId = 1;
+    string PartyId = 2;
+    string PublicId = 3;
 }
 
 message GetAllCandidate{
