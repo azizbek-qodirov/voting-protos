@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option go_package = "/genprotos";
+
+package voting_proto;
+
+
+message Void{}
+
+message ById{
+    string Id = 1;
+}

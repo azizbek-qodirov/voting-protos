@@ -1,10 +1,12 @@
 syntax = "proto3";
 
-option go_package = "github.com/saladin2098/month3/lesson11/public_service/genprotos";
+option go_package = "/genprotos";
 
 package voting_proto;
 
+import "void.proto";
 import "election.proto";
+
 
 service PublicVoteService {
     rpc CreatePublicVote(PublicVoteCreate) returns (Void) {}
