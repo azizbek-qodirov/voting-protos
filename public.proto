@@ -4,28 +4,69 @@ option go_package = "/genprotos";
 
 package voting_proto;
 
-import "proto-service/voting-protos/party.proto";
 import "proto-service/voting-protos/void.proto";
-import "proto-service/voting-protos/election.proto";
 
-service PublicService {
-    rpc CreatePublic(Public) returns (Void) {}
-    rpc DeletePublic(ById) returns (Void) {}
-    rpc UpdatePublic(Public) returns(Void){}
-    rpc GetByIdPublic(ById) returns (Public) {}
-    rpc GetAllPublics(Filter) returns (GetAllPublic) {}
+service PublicService{ 
+  rpc Create(PublicCreate) returns (Void){};
+  rpc Update(PublicUpdate) returns (Void){};
+  rpc Delete(PublicDelete) returns (Void){};
+  rpc GetById(PublicGetById) returns (Public){};
+  rpc GetAll(PublicGetAllReq) returns (PublicGetAllResp){};
 }
-
 message Public {
-    string id = 1;
-    string first_name=2;
-    string last_name=3;
-    string birthday =4;
-    string gender=5;
-    string nation=6;
-    Party  party=7;
+  string id = 1; 
+  string name = 2;
+  string last_name = 3;
+  string phone = 4;
+  string email = 5;
+  string birthday = 6; 
+  string gender = 7; 
+  string party_id = 8; 
+  string created_at = 9;
+  string updated_at = 10;
+  int64 deleted_at = 11; 
 }
 
-message GetAllPublic{
-  repeated Public publics=1;
+message PublicCreate {
+  string id = 1; 
+  string name = 2;
+  string last_name = 3;
+  string phone = 4;
+  string email = 5;
+  string birthday = 6; 
+  string gender = 7; 
+  string party_id = 8; 
+}
+
+message PublicUpdate {
+  string id = 1; 
+  string name = 2;
+  string last_name = 3;
+  string phone = 4;
+  string email = 5;
+  string birthday = 6; 
+  string gender = 7; 
+  string party_id = 8; 
+}
+
+message PublicDelete{
+  string id = 1;
+}
+
+message PublicGetById{
+  string id = 1;
+}
+
+message PublicGetAllReq{ 
+  string party_id = 1; 
+  string name = 2;
+  string last_name = 3;
+  string phone = 4;
+  string email = 5;
+  string birthday = 6; 
+  string gender = 7; 
+}
+
+message PublicGetAllResp{
+  repeated Public publics = 1;
 }
