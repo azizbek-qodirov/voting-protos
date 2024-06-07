@@ -4,9 +4,9 @@ option go_package = "/genprotos";
 
 package voting_proto;
 
-import "party.proto";
-import "void.proto";
-import "election.proto";
+import "proto-service/voting-protos/party.proto";
+import "proto-service/voting-protos/void.proto";
+import "proto-service/voting-protos/election.proto";
 
 service PublicService {
     rpc CreatePublic(Public) returns (Void) {}
