@@ -8,5 +8,5 @@ package voting_proto;
 message Void{}
 
 message ById{
-    string Id = 1;
+  string Id = 1;
 }

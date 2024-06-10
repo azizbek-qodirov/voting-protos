@@ -9,12 +9,12 @@ import "proto-service/voting-protos/election.proto";
 
 
 service PublicVoteService {
-    rpc CreatePublicVote(PublicVoteCreate) returns (Void) {}
-    rpc DeletePublicVote(ById) returns (Void) {}
-    rpc UpdatePublicVote(PublicVote) returns(Void){}
-    rpc GetByIdPublicVote(ById) returns (PublicVote) {}
-    rpc GetAllPublucVotes(Filter) returns (GetAllPublicVote) {}
-    rpc FindWinner(WhichElection) returns (Winner) {}
+  rpc CreatePublicVote(PublicVoteCreate) returns (Void) {}
+  rpc DeletePublicVote(ById) returns (Void) {}
+  rpc UpdatePublicVote(PublicVote) returns(Void){}
+  rpc GetByIdPublicVote(ById) returns (PublicVote) {}
+  rpc GetAllPublucVotes(Filter) returns (GetAllPublicVote) {}
+  rpc FindWinner(WhichElection) returns (Winner) {}
 }
 message Winner {
   string ElectionId =1;
@@ -26,10 +26,10 @@ message WhichElection {
 }
 
 message PublicVote {
-    string Id = 1;
-    string ElectionId =2;
-    string PublicId =3;
-    string CandidateId=4;
+  string Id = 1;
+  string ElectionId =2;
+  string PublicId =3;
+  string CandidateId=4;
 }
 message PublicVoteCreate {
   string ElectionId =2;

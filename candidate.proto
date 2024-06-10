@@ -8,23 +8,23 @@ import "proto-service/voting-protos/void.proto";
 import "proto-service/voting-protos/election.proto";
 
 service CandidateService {
-    rpc CreateCandidate(CandidateCreate) returns (Void) {}
-    rpc DeleteCandidate(ById) returns (Void) {}
-    rpc UpdateCandidate(Candidate) returns(Void){}
-    rpc GetByIdCandidate(ById) returns (Candidate) {}
-    rpc GetAllCandidates(Filter) returns (GetAllCandidate) {}
+  rpc CreateCandidate(CandidateCreate) returns (Void) {}
+  rpc DeleteCandidate(ById) returns (Void) {}
+  rpc UpdateCandidate(Candidate) returns(Void){}
+  rpc GetByIdCandidate(ById) returns (Candidate) {}
+  rpc GetAllCandidates(Filter) returns (GetAllCandidate) {}
 }
 
 message Candidate {
-    string id = 1;
-    string election =2;
-    string party=3;
-    string public=4;
+  string id = 1;
+  string election =2;
+  string party=3;
+  string public=4;
 }
 message CandidateCreate {
-    string ElectionId = 1;
-    string PartyId = 2;
-    string PublicId = 3;
+  string ElectionId = 1;
+  string PartyId = 2;
+  string PublicId = 3;
 }
 
 message GetAllCandidate{
